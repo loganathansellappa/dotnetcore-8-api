@@ -1,0 +1,10 @@
+.idea/
+obj/
+Restaurants.API/obj
+Restaurants.API/bin
+Restaurants.Infrastructure/obj
+Restaurants.Infrastructure/bin
+Restaurants.Domain/obj
+Restaurants.Domain/bin
+Restaurants.Application/obj
+Restaurants.Application/bin
