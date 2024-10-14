@@ -3,11 +3,11 @@ POST http://localhost:5298/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "",
+  "Name": "ABC",
   "Description": "Fast food restaurant",
-  "Category": "Fast food",
+  "Category": "Indian",
   "HasDelivery": true,
-  "ContactEmail": "contact@kfc.com",
+  "ContactEmail": "sda@abc.com",
   "City": "London",
   "Street": "Baker Street",
   "PostalCode": "12-345"
