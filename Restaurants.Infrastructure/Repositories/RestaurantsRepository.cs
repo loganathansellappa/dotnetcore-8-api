@@ -23,4 +23,11 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
             .FirstOrDefaultAsync(x => x.Id == id);
         return restaurant;
     }
+    
+    public async Task<int> CreateAsync(Restaurant entity)
+    {
+        dbContext.Restaurants.Add(entity);
+        await dbContext.SaveChangesAsync();
+        return entity.Id;
+    }
 }
