@@ -3,7 +3,7 @@ POST http://localhost:5298/api/restaurants
 Content-Type: application/json
 
 {
-  "Name": "ABC",
+  "Name": "MediatorR",
   "Description": "Fast food restaurant",
   "Category": "Indian",
   "HasDelivery": true,
@@ -18,6 +18,6 @@ GET http://localhost:5298/api/restaurants
 <> 2024-10-03T140155.200.json
 
 ###
-GET http://localhost:5298/api/restaurants
+GET http://localhost:5298/api/restaurants/25
 
 <> 2024-10-03T225827.200.json

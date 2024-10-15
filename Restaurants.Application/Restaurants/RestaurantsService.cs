@@ -8,6 +8,9 @@ namespace Restaurants.Application.Restaurants;
 
 internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, ILogger<RestaurantsService> logger, IMapper mapper) : IRestaurantsService
 {
+    /*
+     * No Longer required, replaced with MediatR CreateRequestCommandCommand
+     */
     public async Task<IEnumerable<RestaurantDto>> GetAllRestaurantsAsync()
     {
         logger.LogInformation("Retrieving all restaurants");
@@ -17,6 +20,9 @@ internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, 
         return restaurantsDtos!;
     }
 
+    /*
+     * No Longer required, replaced with MediatR CreateRequestCommandCommand
+     */
     public async Task<RestaurantDto?> GetRestaurantByIdAsync(int id)
     {
         logger.LogInformation($"Retrieving restaurant with id: {id}");
@@ -25,7 +31,9 @@ internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, 
 
         return restaurantDto;
     }
-    
+    /*
+     * No Longer required, replaced with MediatR CreateRequestCommandCommand
+     */
     public async Task<int> CreateRestaurantDto(CreateRestaurantDto createRestaurantDto)
     {
         logger.LogInformation($"Creating restaurant");
