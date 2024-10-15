@@ -36,4 +36,35 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
         dbContext.Remove(entity);
         await dbContext.SaveChangesAsync();
     }
+    
+    public async Task<bool> UpdateAsync(Restaurant entity)
+    {
+        var existingEntity = await dbContext.Restaurants.FindAsync(entity.Id);
+        if (existingEntity == null)
+            return false;
+        if (!string.IsNullOrWhiteSpace(entity.Name))
+        {
+            existingEntity.Name = entity.Name;
+        }
+
+        if (!string.IsNullOrWhiteSpace(entity.Description))
+        {
+            existingEntity.Description = entity.Description;
+        }
+
+        // Check for boolean values explicitly (ensure they are not null)
+        if (entity.HasDelivery != existingEntity.HasDelivery)
+        {
+            existingEntity.HasDelivery = entity.HasDelivery;
+        }
+        try
+        {
+            await dbContext.SaveChangesAsync();
+            return true;
+        }
+        catch (DbUpdateConcurrencyException ex)
+        {
+            return false;
+        }
+    }
 }
