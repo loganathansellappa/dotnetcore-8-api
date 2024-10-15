@@ -1,8 +1,38 @@
-@Restuarants.API_HostAddress = http://localhost:5298
+@API_HostAddress = http://localhost:5298
 
-GET {{Restuarants.API_HostAddress}}/weatherforecast/
+GET {{API_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
-GET {{Restuarants.API_HostAddress}}/weatherforecast/
+GET {{API_HostAddress}}/weatherforecast/
 Accept: application/json
+
+
+###
+POST {{API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "Name": "MediatorR",
+  "Description": "Fast food restaurant",
+  "Category": "Indian",
+  "HasDelivery": true,
+  "ContactEmail": "sda@abc.com",
+  "City": "London",
+  "Street": "Baker Street",
+  "PostalCode": "12-345"
+}
+###
+GET {{API_HostAddress}}/api/restaurants
+
+<> 2024-10-03T140155.200.json
+
+###
+GET {{API_HostAddress}}/api/restaurants/25
+
+<> 2024-10-03T225827.200.json
+
+###
+DELETE {{API_HostAddress}}/api/restaurants/19
+
+<> 2024-10-03T225827.200.json
