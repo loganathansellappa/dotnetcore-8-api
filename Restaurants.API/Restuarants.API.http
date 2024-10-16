@@ -7,7 +7,6 @@ Accept: application/json
 GET {{API_HostAddress}}/weatherforecast/
 Accept: application/json
 
-
 ###
 POST {{API_HostAddress}}/api/restaurants
 Content-Type: application/json
@@ -22,6 +21,18 @@ Content-Type: application/json
   "Street": "Baker Street",
   "PostalCode": "12-345"
 }
+
+###
+PUT {{API_HostAddress}}/api/restaurants
+Content-Type: application/json
+
+{
+  "id": "1003",
+  "Name": "ChangedName",
+  "Description": "Updated description",
+  "HasDelivery": false
+}
+
 ###
 GET {{API_HostAddress}}/api/restaurants
 
