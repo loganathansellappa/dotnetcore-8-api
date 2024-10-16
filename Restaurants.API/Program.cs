@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
+builder.Services.AddSwaggerGen();
 builder.Host.UseSerilog((context, configuration) =>
 {
     configuration.ReadFrom.Configuration(context.Configuration);
@@ -28,18 +29,26 @@ builder.Host.UseSerilog((context, configuration) =>
     //
 });
 var app = builder.Build();
-// Configure the HTTP request pipeline.
-app.UseSerilogRequestLogging();
 var scope = app.Services.CreateScope();
 var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 
 await seeder.Seed();
+
 // Configure the HTTP request pipeline.
+app.UseSerilogRequestLogging();
+
+
+app.UseSwagger();
+
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapControllers();
 
+
+app.MapControllers();
+app.UseSwagger();   
+
+app.UseSwaggerUI();
 app.Run();
