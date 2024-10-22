@@ -23,7 +23,7 @@ internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, 
     /*
      * No Longer required, replaced with MediatR CreateRequestCommandCommand
      */
-    public async Task<RestaurantDto?> GetRestaurantByIdAsync(int id)
+    public async Task<RestaurantDto> GetRestaurantByIdAsync(int id)
     {
         logger.LogInformation($"Retrieving restaurant with id: {id}");
         var restaurant = await restaurantsRepository.GetByIdAsync(id);

@@ -1,4 +1,5 @@
 using Restaurants.API.Controllers;
+using Restaurants.API.Middlewares;
 using Restaurants.Application.Extensions;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
@@ -15,6 +16,8 @@ builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<ErrorHandlingMiddleware>();
+builder.Services.AddScoped<LoggingMiddleware>();
 builder.Host.UseSerilog((context, configuration) =>
 {
     configuration.ReadFrom.Configuration(context.Configuration);
@@ -34,6 +37,8 @@ var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 
 await seeder.Seed();
 
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<LoggingMiddleware>();
 // Configure the HTTP request pipeline.
 app.UseSerilogRequestLogging();
 
