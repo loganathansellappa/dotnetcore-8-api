@@ -52,7 +52,7 @@ POST {{API_HostAddress}}/api/restaurants/1003/dishes
 Content-Type: application/json
 
 {
-  "Name": "Dish 2",
+  "Name": "Dish 3",
   "Description": "Dish 1 description",
   "KiloCalories": 1,
   "Price": 10
