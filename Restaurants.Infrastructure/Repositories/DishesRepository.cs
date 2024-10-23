@@ -21,11 +21,8 @@ internal class DishesRepository(RestaurantsDbContext dbContext)  : IDishesReposi
             .ToListAsync(); 
     }
 
-    public async Task DeleteAllDishesForRestaurantAsync(int restaurantId)
+    public async Task DeleteAllDishesForRestaurantAsync(IEnumerable<Dish> dishes)
     {
-        var dishes =  await dbContext.Dishes
-            .Where(d => d.RestaurantId == restaurantId)
-            .ToListAsync();
         dbContext.Dishes.RemoveRange(dishes);
         await dbContext.SaveChangesAsync();
     }

@@ -6,5 +6,5 @@ public interface IDishesRepository
 {
     Task<int> Create(Dish entity);
     Task<IEnumerable<Dish>> GetDishesForRestaurant(int restaurantId);
-    Task DeleteAllDishesForRestaurantAsync(int restaurantId);
+    Task DeleteAllDishesForRestaurantAsync(IEnumerable<Dish> dishes);
 }

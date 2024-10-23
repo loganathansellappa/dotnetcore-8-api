@@ -17,6 +17,6 @@ public class DeleteAllDishesForRestaurantHandler(ILogger<DeleteAllDishesForResta
         if (restaurant is null)
             throw new NotFoundException(nameof(Restaurant), $"request.RestaurantId");
 
-        await dishesRepository.DeleteAllDishesForRestaurantAsync(request.RestaurantId);
+        await dishesRepository.DeleteAllDishesForRestaurantAsync(restaurant.Dishes);
     }
 }
