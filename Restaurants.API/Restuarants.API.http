@@ -39,7 +39,7 @@ GET {{API_HostAddress}}/api/restaurants
 <> 2024-10-03T140155.200.json
 
 ###
-GET {{API_HostAddress}}/api/restaurants/25
+GET {{API_HostAddress}}/api/restaurants/1003
 
 <> 2024-10-03T225827.200.json
 
@@ -47,3 +47,27 @@ GET {{API_HostAddress}}/api/restaurants/25
 DELETE {{API_HostAddress}}/api/restaurants/19
 
 <> 2024-10-03T225827.200.json
+
+
+
+
+###
+POST {{API_HostAddress}}/api/restaurants/1003/dishes
+Content-Type: application/json
+
+{
+  "Name": "Dish 2",
+  "Description": "Dish 1 description",
+  "KiloCalories": 1,
+  "Price": 10
+}
+
+###
+GET {{API_HostAddress}}/api/restaurants/1003/dishes/1
+
+<> 2024-10-03T140155.200.json
+
+###
+DELETE {{API_HostAddress}}/api/restaurants/00/dishes
+
+<> 2024-10-03T140155.200.json
