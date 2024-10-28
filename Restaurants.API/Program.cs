@@ -13,7 +13,7 @@ using Serilog.Formatting.Json;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllers();
 builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
 builder.Services.AddInfrastructure(builder.Configuration);
