@@ -23,17 +23,17 @@ Content-Type: application/json
 ###
 GET {{API_HostAddress}}/weatherforecast/
 Accept: application/json
-Authorization: Bearer {{API_Token}}
 
 
 ###
 GET {{API_HostAddress}}/api/restaurants
 Content-Type: application/json
-Authorization: {{API_Token}}
 
 ###
 POST {{API_HostAddress}}/api/restaurants
 Content-Type: application/json
+Authorization: {{API_Token}}
+
 
 {
   "Name": "MediatorR",
@@ -49,7 +49,7 @@ Content-Type: application/json
 ###
 PUT {{API_HostAddress}}/api/restaurants
 Content-Type: application/json
-Authorization: Bearer {{API_Token}}
+Authorization: {{API_Token}}
 
 {
   "id": "1003",
@@ -61,11 +61,15 @@ Authorization: Bearer {{API_Token}}
 
 ###
 GET {{API_HostAddress}}/api/restaurants/1003
+Accept: application/json
+Authorization: {{API_Token}}
 
 <> 2024-10-03T225827.200.json
 
 ###
 DELETE {{API_HostAddress}}/api/restaurants/19
+Accept: application/json
+Authorization: {{API_Token}}
 
 <> 2024-10-03T225827.200.json
 
@@ -74,7 +78,9 @@ DELETE {{API_HostAddress}}/api/restaurants/19
 
 ###
 POST {{API_HostAddress}}/api/restaurants/1003/dishes
-Content-Type: application/json
+Accept: application/json
+Authorization: {{API_Token}}
+
 
 {
   "Name": "Dish 3",
@@ -85,11 +91,15 @@ Content-Type: application/json
 
 ###
 GET {{API_HostAddress}}/api/restaurants/1003/dishes/1
+Accept: application/json
+Authorization: {{API_Token}}
 
 <> 2024-10-03T140155.200.json
 
 ###
 DELETE {{API_HostAddress}}/api/restaurants/1003/dishes
+Accept: application/json
+Authorization: {{API_Token}}
 
 <> 2024-10-03T140155.200.json
 
