@@ -67,3 +67,23 @@ GET {{API_HostAddress}}/api/restaurants/1003/dishes/1
 DELETE {{API_HostAddress}}/api/restaurants/1003/dishes
 
 <> 2024-10-03T140155.200.json
+
+
+
+###
+POST {{API_HostAddress}}/register
+Content-Type: application/json
+
+{
+  "email": "sda@abc.com",
+  "password": "abcTest123!"
+}
+
+###
+POST {{API_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "email": "sda@abc.com",
+  "password": "abcTest123!"
+}
