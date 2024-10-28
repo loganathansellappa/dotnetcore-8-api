@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Restaurants;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
@@ -16,6 +17,7 @@ namespace Restaurants.API.Controllers;
  * Service Pattern replaced with CQRS patter using MediatorR
  */
 // public class RestaurantsController(IRestaurantsService restaurantsService) : ControllerBase 
+[Authorize]
 public class RestaurantsController(IMediator mediator) : ControllerBase
 {
     [HttpGet]
@@ -23,7 +25,7 @@ public class RestaurantsController(IMediator mediator) : ControllerBase
     public async Task<ActionResult<IEnumerable<RestaurantDto>>> GetAll()
     {
         var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
-        return Ok(restaurants);
+         return Ok(restaurants);
     }
     
     [HttpGet("{id}")]

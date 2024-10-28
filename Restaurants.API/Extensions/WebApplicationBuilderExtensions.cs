@@ -16,6 +16,8 @@ public static class WebApplicationBuilderExtensions
 
         builder.Services.AddEndpointsApiExplorer();
 
+        // Add Authentication
+        builder.Services.AddAuthentication();
 
         builder.Services.AddControllers();
         builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
