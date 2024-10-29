@@ -24,7 +24,9 @@ app.UseSwagger();
 
 app.UseHttpsRedirection();
 // EF Identity Endpoints
-app.MapGroup("api/identity").MapIdentityApi<User>();
+app.MapGroup("api/identity")
+    .WithTags("Identity") // for swagger to display custom user endpoints in group with default generated ones
+    .MapIdentityApi<User>();
 app.UseAuthorization();
 
 app.MapControllers();
