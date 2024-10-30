@@ -1,12 +1,12 @@
 @API_HostAddress = http://localhost:5298
-@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb5Xs3Smeq_URTgQ70Ukp35_SH-912ZIdu365D4R8EcW0N1i0FaTIFgydbc96uV54coCiOcLrnlgj6W2ZRYC3J1TQ_RXxj7s48Rph5x0El-rm8_Ya1h31CFq98AyleTZLmajs6SYX3ZTYs1hmj4wo6igWlLEviO_fw60p9k-QdmJ7ahpwaJUg9t_27mbUny_9r3tJzKoIPry9Astw6jVKSk5NMJ8KiqvDM3qXvvIUroOVAvqhb_Ulke1dByvd4CBOLbvIPC0VWqX02NgiSP9DY0VvRtYEfvhgw0u9EdaAp-2LkSHl2yOfjS8eJidqNw_OGF8iUPyisWW8nv6onvHQOndPA0J80BgpQoJq75XPLWW_hg6vR61N_a1gVx4kwHxLxcQyLmcV5hbzX8ow6kmAwiNsaFddF6r26oq0hi_Fwnuk55sMhWNAWBx-E96xksfynP_BfeJsy8zOOgrpaO6bGhlPhITrNz1Taj8FRkXl1Z4zrgiMwtlNe1KL_S_kWOU2LKjyHyebxvKWpMEontmzs5s5BPxlTjlvFMQVgPiideJpDT1cdvutEoL1BGyXZw4HXuaKWpHc1aX9HpmLz6zxnW1ZDRDyiMGkl0WbmlqrhUmheJmKjRuiD_LuW2CfATHdTJlWt05xbnAik_7-45wH1a2zMq19mqVgfaYvt015CobDA
+@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb5O9DSl5XPHD54SdGE7BaE47BToBcK2wNM_lEQ4LIXO6u8jX0SHrKBc26929Hc3Y0M86hNZB-r5CndcKWhNs87NuM6l4JVPrfzsIM-Dyhq1-SU8ubCj2XMAhZsQeuF0aAx1vmH-qzZIF4OyDf_08kLEqV7Oow6LVrqvZxqJlOg7IYihjOgarpn8hahY-sSNFyGGdzrC2HQG_mgmlRkjj_QgCAPcvRaO0g3Meka6zJLEgl6XG49JJWMMPTnqNLQ0tHbXPcuZxsw2Q3w_4MuIcEIsyqvlcjFrsuI0Y3JHXhl_hzdhQDRqtJAo-D70UGZWPb-W8ZCyEfCQ5LF0R8lp-ifKvNLfNkv_V3qunjOqurDHVJR4dxyh-5yQ7Iwjks_4BdAiqysCOTYVAc7vx4fReVoNPM1Mkh6yLAWoJHO6nsXDbxnOaCFw7BxhA9kz69ln9tB4mXba03DKjHSbshA4PsWqRq7OAEdmz7Z3EDBJrToiT5PpZKIc4TEhxgWu0Yc4QPi7HfggtFUhQiAogm8jmVy1OkrEKDgfEzs3ZF8aDjtbug3UXwLHXDah3AZ385Eis2e74CY3f41zBH_rc8wmxfYhiusovq9j_8aLwYYU0xxWYCzKlloZgFF-x0Xq40XubUrOgXV-I0MsXdQV9sb-QYaL2S4LqRTgOQY7czm-UVhyr3Ln9f__mnD814Czuvnf25piJH14LKVDHFx9zVtYuHY8Ey2kynIhkrr7-qDxSw40ezgA5w6Iqqw7t62m1PtJWa1ah0WrojkfISVW0Md6y8VhUIPrKkNpMry2eKXgWX_lhw
 
 ###
 POST {{API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "sda@abc.com",
+  "email": "owner@testdevlogan.com",
   "password": "abcTest123!"
 }
 
@@ -15,8 +15,18 @@ POST {{API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "sda@abc.com",
+  "email": "admin@testdevlogan.com",
   "password": "abcTest123!"
+}
+
+###
+POST {{API_HostAddress}}/api/identity/userRole
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+{
+  "UserEmail": "user@testdevlogan.com",
+  "RoleName": "User"
 }
 
 
