@@ -1,8 +1,8 @@
 using MediatR;
 
-namespace Restaurants.Application.Users.Commands.UnAssignUserRole;
+namespace Restaurants.Application.Users.Commands.UserRole.Base;
 
-public class UnAssignUserRoleCommand : IRequest
+public abstract class UserRoleBaseCommand : IRequest
 {
     public string UserEmail { get; set; } = default!;
     public string RoleName { get; set; } = default!;
