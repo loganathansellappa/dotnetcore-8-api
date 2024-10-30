@@ -25,8 +25,18 @@ Content-Type: application/json
 Authorization: {{API_Token}}
 
 {
-  "UserEmail": "user@testdevlogan.com",
-  "RoleName": "User"
+  "UserEmail": "owner@testdevlogan.com",
+  "RoleName": "Owner"
+}
+
+###
+DELETE {{API_HostAddress}}/api/identity/userRole
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+{
+  "UserEmail": "owner@testdevlogan.com",
+  "RoleName": "owner"
 }
 
 
