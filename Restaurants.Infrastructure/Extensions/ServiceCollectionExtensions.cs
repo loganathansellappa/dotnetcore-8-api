@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
+using Restaurants.Infrastructure.Authorization;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
 using Restaurants.Infrastructure.Seeders;
@@ -22,6 +23,7 @@ public static class ServiceCollectionExtensions
         services.AddDbContext<RestaurantsDbContext>(options => options.UseSqlServer(connectionString).EnableSensitiveDataLogging());
         services.AddIdentityApiEndpoints<User>()
             .AddRoles<IdentityRole>() // Support Roles in Authorize decorator
+            .AddClaimsPrincipalFactory<RestaurantsUserClaimsPrincipalFactory>() // Add claims to access token
             .AddEntityFrameworkStores<RestaurantsDbContext>();
         services.AddScoped<IRestaurantSeeder, RestaurantSeeder>();
         services.AddScoped<IRestaurantsRepository, RestaurantsRepository>();

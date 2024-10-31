@@ -21,7 +21,8 @@ namespace Restaurants.API.Controllers;
 public class RestaurantsController(IMediator mediator) : ControllerBase
 {
     [HttpGet]
-    [AllowAnonymous]
+    [Authorize]
+    //[AllowAnonymous]
     //[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<RestaurantDto>))]
     public async Task<ActionResult<IEnumerable<RestaurantDto>>> GetAll()
     {
