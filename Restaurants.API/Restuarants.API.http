@@ -1,12 +1,12 @@
 @API_HostAddress = http://localhost:5298
-@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb7Yw1onrjnZJNRNlLI1faDdPB5uMNEfv_IYw3QwNepzpO2z8ur9xvBSAK0lzAcnBbqCYZjT0XGn77XvEkj588qxiI_inipuFueN2H5aiNNevXUPutmhNyk_8_z3pHx3t-FRrRYO6oZ0z5m3bPMVSaM9dk_4wWtQNL1Q1cD5pW2KTt9ZSoKcfz1OnHCnj9KBJHa1v9P6KvCpyGHkpFH-cPVRhd2GbGe0g5IhxWzMeL_5jBwMw49_ZGPDUXMAOo-7rMVtalyTMiZEIm6CgHhCEW81ARMgoPQc5C-H_nvPt3TGTxE9AkPkjtYPhsGM30oYTISilBoyKBPfeImPakWbbhPF3ulSPlHdo6Xhf_MdoITqdSJ3ZzT5GD0YhIK41arK_wxqZT4ll3wa6cdRoYFJaXvPJMY4AbpBA4qq70DgKRL8Lf9BlNXT3FNGwuHE_JgiJ8pqXZDAZYNQA-WAXemeu0vNWVGjJlXQZ4wH280CyQ5SWVkT8rqK7B71NFygzSeTRba90fjysOBmfCBe-zVTY07KdUxbbYupc2Uj1cesBhqmO8mjXspc1CpmfGqMDVNRc_OK93HHXNh4w8GAb9zZje3pX-pUhQ2c7dxryD07fTsiZDu18zzWvW-uWZZr1X20ViYkn2zGS6B3jAog7XvDVWHOvkFpDqQY_MPopWuyXTEXWWrReuhh7KbDLcH3Sw22gKBZ3J8Pk5jZxuHJeKU5sxHgx2wmDHhkDQPfWNZLYrEUbfOieEfI3fn5CTJIivfZQgk8fXcXx7NU69nFXkVJ9tU6ewZhKvjFHol_2ipG1inRYGWUbusX6z8tGnBQUIHoHNPpuGGufCkk3PclV9kdlAUCG4Po_sLvYeypzJgaCsi3LO5-F885Bz_W3uqzcFvrSAo
+@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb4GjnDCNH7bwEJfX4gzbiUa_dtp9TjZG38A4Of03Db4N8EeQ6mNsbAVb4bv7oS55cZcMeLkGnDW5MKG9k8psM8YaaCZztPRDiowsvsexs-vBQQZgxIahRGTPQxJV-tPMXzklbiq6xZrD6KmDUzk9ZRQZU2MLCYea2qHipbgp6I969bzteWJoumPMtUU2Fr1lnjLFNqLYJ9kq-MFdjZzKPMCco16dx761oJmWj_MUdnX3g8pw7cld2uaBMtlbS2qwbYIrK-oiydbTWPni-bkE8xhue-GoWHk5bTM7SlzsST3owXvpsHpQEL-2qWSPMKBd-MYFGnEGIaKjBadDFT-rEMc7n21YZ78-3KATUGtCqMw-CFDw1ok1ySyImXb0Yzj-zbxmcEU4VVgud06iaYEE9ssjXumy0rUrYS1eE1llgNJcbrIjq_zIV8WrrYLWqSfGche7tgHNcOMI2MQO4igVTTsODaOcIQo5NDHm2aUpgtgsSVk5VWzqxIJA27kNvrLpzlDpBmSxg_63Ct6nqZ8To6dLRWsgyj8dzK05U4_GgkFiJrTHuG3ocwQKw9OrQa_KRmm47K4Rk7AmoigS-QA7yScAE4I1lV6_wR08YROy4xqhnMjIf0EIQYWj8o-ArfotJQ1P1WNnE4ISpS01Os8CJblglif40Av7pNC6fss1an27aNCBExUN77QspLZ1JyD4rxDfOMTA6SzbsmWn0YkQKJdX_oa8CH4MpMFteYxZNiss45G5MyXZWr376OSdc7rqCumw81mUNXnke72XnHHL4k3XmAkYXgOGXP0B4I8mtNHvA
 
 ###
 POST {{API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "admin@testdevlogan.com",
+  "email": "user@testdevlogan.com",
   "password": "abcTest123!"
 }
 
@@ -15,7 +15,7 @@ POST {{API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "admin@testdevlogan.com",
+  "email": "user@testdevlogan.com",
   "password": "abcTest123!"
 }
 
@@ -85,7 +85,7 @@ Authorization: {{API_Token}}
 
 {
   "id": "1003",
-  "Name": "ChangedName",
+  "Name": "OwnerChanged the name",
   "Description": "Updated description",
   "HasDelivery": false
 }

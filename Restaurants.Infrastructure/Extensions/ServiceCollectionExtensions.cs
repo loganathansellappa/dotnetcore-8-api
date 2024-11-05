@@ -5,12 +5,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
+using Restaurants.Domain.Interfaces;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Authorization;
 using Restaurants.Infrastructure.Authorization.Requirements;
 using Restaurants.Infrastructure.Persistence;
 using Restaurants.Infrastructure.Repositories;
 using Restaurants.Infrastructure.Seeders;
+using Restaurants.Infrastructure.Services;
 
 namespace Restaurants.Infrastructure.Extensions;
 
@@ -35,5 +37,6 @@ public static class ServiceCollectionExtensions
                 builder => builder.RequireClaim(AppClaimTypes.Nationality, "Indian", "Deutch"))
             .AddPolicy(PolicyNames.Atleast20, builder => builder.AddRequirements(new MinimumAgeRequirement(20)));
         services.AddScoped<IAuthorizationHandler, MinimumAgeRequirementHandler>();
+        services.AddScoped<IRestaurantAuthorizationService, RestaurantAuthorizationService>();
     }
 }
