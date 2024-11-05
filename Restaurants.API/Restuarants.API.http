@@ -1,12 +1,12 @@
 @API_HostAddress = http://localhost:5298
-@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb5Cwe4FjpGa1-iyGSFSH8NedOJETZF9w3xIWS0O_UFXQSyOwvrb68u0sIqc1JiZ5zRQ8rexJ1K84RniHRbd2Ev3QYzFYNtBBBt2gNaCwzVUrrBjtYyHPKfpW56nIf3JgWpQRixo8luH_8m29nqchis6vPrR3pwGULLcgnSzbB64iZunTTPQ_lsD6xSsDSgsAfrG38wzfKid8Q4W7UGqif7HQRrcK_9x3zBKGSCiAOds63jd_qzubLGAfc1A77q6DMBSsHxzc2D4j-hiRkOSr5jYxNzYhuZzg2EBqjiyW7mTZTW8d31AaPe47XVv8jy7uYlmnFWqjBgGBOKexFuN59nNXClGITJt9mBUpkF5eVtHxAj8blHlloQ7sGFWTfPYbUI1WO3aQE8MBji_QB8m8WkjqFK4kscy2h72_pK8j_ivKrBi-I4722TscQzfEgS9ERjrK_BgPYjS-IkMOwWpZHGhmbODfISSHTZLu5LIBYoSzvHxDtwmricOxaIs1J5Z5oVHfxtHScOzi_KJdN6tdo4li2Ms7D89n-zWaoyHP5arXcrH8nWhHFKy0Ezz9-Yg2PwIBVrcIqxoBJYrmtLKkeP73JrezFf1AbEF4oGkjVyi2YsaEd6jLIcExPM8xw4XiNQDlB-V2wy24-lEKTZkDbMBMb8ZY6sktEG8_vkMvsILykpsDc_mNkmeCPLzLsUAvJOX2GBQPmCTCsBOFBBOXPBr439cphwbC7UZAZ2wI41NUQ289bhrpnXmls8t0I2syhg
+@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb7aw1FTWPrmJyxP3yeXGEAJ-6g7p1tSetsZLtC7YOZpp-iohejSlDbs-5_7SCnqyEfImtlrNAoPaFINwQ8_xoZR43vT6vK7-y7JVyxGiI0a2WSE108NoOnT72K4M6VyzkUDR61CEy2vRUbXBkmfstDbpEhVEtX5VU0Ye3j9vkIs_rSSj90moTpyfkMIx2_NH4ALrcG0aBxDGQFFgnRdkklInB_kmAwC44846tGKQlaawKv0oGsZP8bNNpgKqm7KCwlFGDBuFhHzfB9FRkfWcD3tRjZx8OxPdPPQISDIZH7GbA6D9Ikb1tUK2IwLQfoCpGSm4w8qoEs27zgG3ud12ttAxZtoAc6UMB5ZOcDvbxtr6VIObtEJIRVjHlm-r7x1m2IWOeEolQs_kiu-LhKoTK1tH7tl9q2TqUQfetanKszkP_PdEvGd48Jj2fa9wg96RTAdyH9pGkugzdp642B3ttoczvOLz9D08TcatwDjgYP33lvZ3dTwb9u05Ab-T3V0hDRYQzxpnleyDelEjdueXxbpv3qwsSOVUPDCA4WJ32cjhXXFKW33FFHk--K9c7a7BsnOYh7UrrYFZoX_6W0hzIh_PVCmOWRNun6D5YJcZqkSgWSiB-0211a8AgNY_uSg_iL5XQ_xrAlYOnGNu67iJAQygxk5BGxMfrl4sfLqxkeKnBnAaOzIg9Bsw7Pl92951IhqzYioKIMlj_bBMKjcLmEG6W1qvWcZXm7yYSAvmNf5WGB0eZeDEKChw2A2lcZrVtWm9mJm3RC_KfWlAqaMV_OpNTjmQ_xR_5o26FTcZYwaOyK7TnzHOwV09wtFJVjTviZ8VhQQrom29w8hePTVJ7Mu5ojxM6sE19Hq5cAthDatlR0LjGrZBzyJDRQDEbHKCW4
 
 ###
 POST {{API_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "owner@testdevlogan.com",
+  "email": "admin@testdevlogan.com",
   "password": "abcTest123!"
 }
 
@@ -15,7 +15,7 @@ POST {{API_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "sda@abc.com",
+  "email": "admin@testdevlogan.com",
   "password": "abcTest123!"
 }
 
@@ -47,7 +47,7 @@ Authorization: {{API_Token}}
 
 {
   "DateOfBirth": "1990-01-01",
-  "Nationality": "DE"
+  "Nationality": "Deutch"
 }
 
 
