@@ -28,6 +28,27 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
         }
     }
 
+    public async Task SeedRandomDataWithHardcodedUser(int count)
+    {
+        if (dbContext.Restaurants.Count() <= 50)
+        {
+            var seedUser = new User
+            {
+                UserName = "seeduser",
+                Email = "seeduser@testdevlogan.com",
+                DateOfBirth = DateOnly.Parse("1990-01-01"),
+                Nationality = "Indian",
+                PasswordHash = new PasswordHasher<User>().HashPassword(null, "abcTest123!")
+            };
+            dbContext.Users.Add(seedUser);
+            await dbContext.SaveChangesAsync();
+            
+            var restaurants = GetRandomRestaurants(seedUser.Id, count);
+            dbContext.Restaurants.AddRange(restaurants);
+            await dbContext.SaveChangesAsync();
+        }
+    }
+
     private IEnumerable<Restaurant> GetRestaurants()
     {
         List<Restaurant> restaurants = [
@@ -82,6 +103,46 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
         return restaurants;
     }
 
+    private IEnumerable<Restaurant> GetRandomRestaurants(string userId, int requiredRecords)
+    {
+        var restaurants = new List<Restaurant>();
+
+        for (int i = 1; i <= requiredRecords; i++)
+        {
+            restaurants.Add(new Restaurant
+            {
+                Name = $"Restaurant_{i}", // Unique name for each restaurant
+                Category = "Fast Food",
+                Description = "This is a sample restaurant description for demonstration purposes.",
+                ContactEmail = $"contact_{i}@example.com",
+                HasDelivery = i % 2 == 0, // Alternate delivery status for variety
+                OwnerId = userId,
+                Dishes = new List<Dish>
+                {
+                    new Dish
+                    {
+                        Name = $"Dish_{i}_1",
+                        Description = $"Sample Dish {i} (10 pcs.)",
+                        Price = 10.30M + i * 0.01M, // Slight variation in price
+                    },
+                    new Dish
+                    {
+                        Name = $"Dish_{i}_2",
+                        Description = $"Sample Dish {i} (5 pcs.)",
+                        Price = 5.30M + i * 0.01M,
+                    }
+                },
+                Address = new Address
+                {
+                    City = "Sample City",
+                    Street = $"Street {i}",
+                    PostalCode = $"PC{i:D4}"
+                }
+            });
+        }
+
+        return restaurants;
+    }
     private IEnumerable<IdentityRole> GetRoles()
     {
         List<IdentityRole> roles =
