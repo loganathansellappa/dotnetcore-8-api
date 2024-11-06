@@ -37,13 +37,20 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
         await dbContext.SaveChangesAsync();
     }
 
-    public async Task<IEnumerable<Restaurant>> GetAllMatchingAsync(string searchTerm)
+    public async Task<(List<Restaurant> restaurants, int totalCount)> GetAllMatchingAsync(string searchTerm,
+        int pageSize, int pageNumber)
     {
-        var restaurants = await dbContext.Restaurants
-            .Where(r => searchTerm == null || r.Name.ToLower().Contains(searchTerm) || r.Description.ToLower().Contains(searchTerm))
-            .Include(r => r.Dishes) 
+        var baseQuery = dbContext.Restaurants
+            .Where(r => searchTerm == null || r.Name.ToLower().Contains(searchTerm) ||
+                        r.Description.ToLower().Contains(searchTerm));
+        
+        var totalCount = await baseQuery.CountAsync();
+        var restaurants = await baseQuery
+            .Skip(pageSize * (pageNumber - 1))
+            .Take(pageSize)
             .ToListAsync();
-        return restaurants;
+        
+        return (restaurants, totalCount);
     }
 
     public async Task<bool> UpdateAsync(Restaurant entity)
