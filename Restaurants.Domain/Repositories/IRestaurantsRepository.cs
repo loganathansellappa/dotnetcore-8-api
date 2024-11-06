@@ -9,4 +9,6 @@ public interface IRestaurantsRepository
     Task<int> CreateAsync(Restaurant entity);
     Task<bool> UpdateAsync(Restaurant entity);
     Task DeleteAsync(Restaurant entity);
+    
+    Task<IEnumerable<Restaurant>> GetAllMatchingAsync(string searchTerm);
 }

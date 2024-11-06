@@ -36,7 +36,16 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
         dbContext.Remove(entity);
         await dbContext.SaveChangesAsync();
     }
-    
+
+    public async Task<IEnumerable<Restaurant>> GetAllMatchingAsync(string searchTerm)
+    {
+        var restaurants = await dbContext.Restaurants
+            .Where(r => searchTerm == null || r.Name.ToLower().Contains(searchTerm) || r.Description.ToLower().Contains(searchTerm))
+            .Include(r => r.Dishes) 
+            .ToListAsync();
+        return restaurants;
+    }
+
     public async Task<bool> UpdateAsync(Restaurant entity)
     {
         var existingEntity = await dbContext.Restaurants.FindAsync(entity.Id);

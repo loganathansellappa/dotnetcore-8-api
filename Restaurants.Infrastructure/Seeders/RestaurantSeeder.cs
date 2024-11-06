@@ -6,7 +6,7 @@ using Restaurants.Infrastructure.Persistence;
 
 namespace Restaurants.Infrastructure.Seeders;
 
-internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSeeder
+internal class RestaurantSeeder(RestaurantsDbContext dbContext, UserManager<User> _userManager) : IRestaurantSeeder
 {
     public async Task Seed()
     {
@@ -30,19 +30,17 @@ internal class RestaurantSeeder(RestaurantsDbContext dbContext) : IRestaurantSee
 
     public async Task SeedRandomDataWithHardcodedUser(int count)
     {
-        if (dbContext.Restaurants.Count() <= 50)
+        if (dbContext.Restaurants.Count() < 20)
         {
             var seedUser = new User
             {
-                UserName = "seeduser",
-                Email = "seeduser@testdevlogan.com",
+                UserName = "testuser@testdevlogan.com",
+                Email = "testuser@testdevlogan.com",
                 DateOfBirth = DateOnly.Parse("1990-01-01"),
                 Nationality = "Indian",
-                PasswordHash = new PasswordHasher<User>().HashPassword(null, "abcTest123!")
             };
-            dbContext.Users.Add(seedUser);
-            await dbContext.SaveChangesAsync();
-            
+            var result = await _userManager.CreateAsync(seedUser, "abcTest123!");
+
             var restaurants = GetRandomRestaurants(seedUser.Id, count);
             dbContext.Restaurants.AddRange(restaurants);
             await dbContext.SaveChangesAsync();
