@@ -1,3 +1,4 @@
+using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
 
 namespace Restaurants.Domain.Repositories;
@@ -11,5 +12,5 @@ public interface IRestaurantsRepository
     Task DeleteAsync(Restaurant entity);
     
     Task<(List<Restaurant> restaurants, int totalCount)> GetAllMatchingAsync(string searchTerm, int pageSize,
-        int pageNumber);
+        int pageNumber, string? sortBy, SortDirection sortDirection);
 }

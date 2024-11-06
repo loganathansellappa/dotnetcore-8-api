@@ -57,7 +57,7 @@ Accept: application/json
 
 
 ###
-GET {{API_HostAddress}}/api/restaurants?searchTerm=restaurant&pageNumber=1&pageSize=15
+GET {{API_HostAddress}}/api/restaurants?searchTerm=restaurant&pageNumber=1&pageSize=15&sortBy=Name&sortDirection=Descending
 Content-Type: application/json
 Authorization: {{API_Token}}
 

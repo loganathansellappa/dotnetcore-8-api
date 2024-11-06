@@ -1,4 +1,6 @@
+using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
+using Restaurants.Domain.Constants;
 using Restaurants.Domain.Entities;
 using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Persistence;
@@ -38,13 +40,31 @@ internal class RestaurantsRepository(RestaurantsDbContext dbContext) : IRestaura
     }
 
     public async Task<(List<Restaurant> restaurants, int totalCount)> GetAllMatchingAsync(string searchTerm,
-        int pageSize, int pageNumber)
+        int pageSize, int pageNumber, string? sortBy, SortDirection sortDirection)
     {
+       
         var baseQuery = dbContext.Restaurants
             .Where(r => searchTerm == null || r.Name.ToLower().Contains(searchTerm) ||
                         r.Description.ToLower().Contains(searchTerm));
         
         var totalCount = await baseQuery.CountAsync();
+        
+        if(sortBy != null)
+        {
+            var columnsSelector = new Dictionary<string, Expression<Func<Restaurant, object>>>
+            {
+                { nameof(Restaurant.Name), r => r.Name },
+                { nameof(Restaurant.Description), r => r.Description },
+                { nameof(Restaurant.Category), r => r.Category },
+            };
+
+            var selectedColumn = columnsSelector[sortBy];
+
+            baseQuery = sortDirection == SortDirection.Ascending
+                ? baseQuery.OrderBy(selectedColumn)
+                : baseQuery.OrderByDescending(selectedColumn);
+        }
+        
         var restaurants = await baseQuery
             .Skip(pageSize * (pageNumber - 1))
             .Take(pageSize)

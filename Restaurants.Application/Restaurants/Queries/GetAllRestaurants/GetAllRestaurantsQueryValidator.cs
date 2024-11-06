@@ -1,12 +1,17 @@
 
 using FluentValidation;
+using Restaurants.Application.Common;
+using Restaurants.Application.Restaurants.Dtos;
+using Restaurants.Domain.Constants;
 
 namespace Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
 
 public class GetAllRestaurantsQueryValidator : AbstractValidator<GetAllRestaurantsQuery>
 {
     private int[] allowPageSizes = [5, 10, 15, 30];
-   
+    private string[] allowedSortByColumnNames = [nameof(RestaurantDto.Name),
+        nameof(RestaurantDto.Category),
+        nameof(RestaurantDto.Description)];
 
     public GetAllRestaurantsQueryValidator()
     {
@@ -17,5 +22,9 @@ public class GetAllRestaurantsQueryValidator : AbstractValidator<GetAllRestauran
             .Must(value => allowPageSizes.Contains(value))
             .WithMessage($"Page size must be in [{string.Join(",", allowPageSizes)}]");
 
+        RuleFor(r => r.SortBy)
+            .Must(value => allowedSortByColumnNames.Contains(value))
+            .When(q => q.SortBy != null)
+            .WithMessage($"Sort by is optional, or must be in [{string.Join(",", allowedSortByColumnNames)}]");
     }
 }
