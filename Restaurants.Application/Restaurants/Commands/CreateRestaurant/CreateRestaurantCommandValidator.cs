@@ -8,7 +8,7 @@ public class CreateRestaurantCommandValidator : AbstractValidator<CreateRestaura
     private readonly string[] _validCategories = ["Italian", "Indian", "Mexican", "Japanese", "American"];
     public CreateRestaurantCommandValidator()
     {
-        RuleFor(dto => dto.Name).Length(3, 100);
+        RuleFor(dto => dto.Name).Length(3, 100).WithMessage("Name must be between 3 and 100 characters.");
         RuleFor(dto => dto.Description).NotEmpty().WithMessage("Description is required");
         RuleFor(dto => dto.Category)
             //.Must(category => validCategories.Contains(category))
