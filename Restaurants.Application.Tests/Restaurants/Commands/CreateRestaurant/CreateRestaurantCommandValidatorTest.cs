@@ -74,7 +74,25 @@ public class CreateRestaurantCommandValidatorTest
             result.ShouldNotHaveValidationErrorFor(x => x.Category);
         }
     }
+    
+    [Theory]
+    [InlineData("Italian")]
+    [InlineData("Indian")]
+    [InlineData("Mexican")]
+    [InlineData("Japanese")]
+    [InlineData("American")]
+    public void Validate_ShouldNotHaveError_ForAnyValidCategory(string category)
+    {
+     
+            var command = new CreateRestaurantCommand { Category = category };
 
+            // Act
+            var result = _validator.TestValidate(command);
+
+            // Assert
+            result.ShouldNotHaveValidationErrorFor(x => x.Category);
+    }
+    
     [Fact]
     public void Validate_ShouldHaveError_WhenEmailIsInvalid()
     {
