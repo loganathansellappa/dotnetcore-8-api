@@ -6,7 +6,7 @@ using Restaurants.Infrastructure.Repositories;
 
 namespace Restaurants.Infrastructure.Authorization.Requirements;
 
-public class MinimumRestaurantRequirementHandler(ILogger<MinimumRestaurantRequirementHandler> logger, 
+internal class MinimumRestaurantRequirementHandler(
     IRestaurantsRepository restaurantsRepository, IUserContext userContext) : AuthorizationHandler<MinimumRestaurantRequirement>
 {
     protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, MinimumRestaurantRequirement requirement)
@@ -14,7 +14,6 @@ public class MinimumRestaurantRequirementHandler(ILogger<MinimumRestaurantRequir
         var currentUser = userContext.GetCurrentUser();
         if (currentUser == null)
         {
-            logger.LogInformation($"Unable to get current user {currentUser.Id}");
              context.Fail();
         }
 
@@ -26,7 +25,6 @@ public class MinimumRestaurantRequirementHandler(ILogger<MinimumRestaurantRequir
         }
         else
         {
-            logger.LogInformation("User dont have required no of restaurants");
             context.Succeed(requirement);
         }
 
