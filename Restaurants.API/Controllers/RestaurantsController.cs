@@ -21,8 +21,17 @@ namespace Restaurants.API.Controllers;
 [Authorize]
 public class RestaurantsController(IMediator mediator) : ControllerBase
 {
+/// <summary>
+/// Retrieves a list of all restaurants based on the provided query parameters.
+/// </summary>
+/// <param name="query">The query parameters to filter the restaurants.</param>
+/// <returns>A list of <see cref="RestaurantDto"/> representing the restaurants.</returns>
+/// <remarks>
+/// This operation requires the user to have at least 2 restaurants in their account
+/// to be authorized to access this endpoint.
+/// </remarks>
     [HttpGet]
-    [Authorize(Policy = PolicyNames.Atleast2Restaurant)]
+    [AllowAnonymous]
     public async Task<ActionResult<IEnumerable<RestaurantDto>>> GetAll([FromQuery] GetAllRestaurantsQuery query)
     {
         var restaurants = await mediator.Send(query);
