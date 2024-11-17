@@ -1,0 +1,37 @@
+2024-11-07 00:03:44.120 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[OwnerId], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]"
+2024-11-07 00:03:44.360 [Information] User dont have required no of restaurants
+2024-11-07 00:03:44.486 [Information] Retrieving all restaurants
+2024-11-07 00:03:44.540 [Information] Executed DbCommand ("29"ms) [Parameters=["@__searchTerm_0_contains='%restaurant%' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Restaurants] AS [r]
+WHERE LOWER([r].[Name]) LIKE @__searchTerm_0_contains ESCAPE N'\' OR LOWER([r].[Description]) LIKE @__searchTerm_0_contains ESCAPE N'\'"
+2024-11-07 00:03:44.594 [Information] Executed DbCommand ("49"ms) [Parameters=["@__searchTerm_0_contains='%restaurant%' (Size = 4000), @__p_1='0', @__p_2='15'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[OwnerId], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+FROM [Restaurants] AS [r]
+WHERE LOWER([r].[Name]) LIKE @__searchTerm_0_contains ESCAPE N'\' OR LOWER([r].[Description]) LIKE @__searchTerm_0_contains ESCAPE N'\'
+ORDER BY [r].[Name]
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY"
+2024-11-07 00:03:44.623 [Information] HTTP "GET" "/api/restaurants" responded 200 in 628.5890 ms
+2024-11-07 00:03:57.413 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[OwnerId], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]"
+2024-11-07 00:03:57.745 [Information] User dont have required no of restaurants
+2024-11-07 00:03:57.747 [Information] Retrieving all restaurants
+2024-11-07 00:03:57.768 [Information] Executed DbCommand ("21"ms) [Parameters=["@__searchTerm_0_contains='%restaurant%' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Restaurants] AS [r]
+WHERE LOWER([r].[Name]) LIKE @__searchTerm_0_contains ESCAPE N'\' OR LOWER([r].[Description]) LIKE @__searchTerm_0_contains ESCAPE N'\'"
+2024-11-07 00:03:57.811 [Information] Executed DbCommand ("38"ms) [Parameters=["@__searchTerm_0_contains='%restaurant%' (Size = 4000), @__p_1='0', @__p_2='15'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[OwnerId], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+FROM [Restaurants] AS [r]
+WHERE LOWER([r].[Name]) LIKE @__searchTerm_0_contains ESCAPE N'\' OR LOWER([r].[Description]) LIKE @__searchTerm_0_contains ESCAPE N'\'
+ORDER BY [r].[Name] DESC
+OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY"
+2024-11-07 00:03:57.813 [Information] HTTP "GET" "/api/restaurants" responded 200 in 432.3563 ms
+2024-11-07 00:09:28.905 [Information] Application is shutting down...

@@ -1,0 +1,107 @@
+2024-11-17 23:29:34.054 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-17 23:29:34.152 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-17 23:29:34.162 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-11-17 23:29:34.464 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-11-17 23:29:34.636 [Information] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-11-17 23:29:34.653 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-11-17 23:29:34.701 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Restaurants] AS [r]"
+2024-11-17 23:29:34.827 [Information] Now listening on: "http://localhost:5298"
+2024-11-17 23:29:34.829 [Information] Application started. Press Ctrl+C to shut down.
+2024-11-17 23:29:34.830 [Information] Hosting environment: "Development"
+2024-11-17 23:29:34.830 [Information] Content root path: "/Users/loganathansellappa/projects/src/Restaurants.API"
+2024-11-17 23:29:35.587 [Warning] Failed to determine the https port for redirect.
+2024-11-17 23:29:35.832 [Information] HTTP "GET" "/weatherforecast" responded 200 in 256.3365 ms
+2024-11-17 23:29:41.602 [Information] HTTP "GET" "/api/restaurants" responded 400 in 82.6984 ms
+2024-11-17 23:29:50.163 [Information] HTTP "GET" "/api/restaurants" responded 400 in 7.4604 ms
+2024-11-17 23:29:57.168 [Information] Retrieving all restaurants
+2024-11-17 23:29:57.214 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Restaurants] AS [r]"
+2024-11-17 23:29:57.233 [Warning] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-17 23:29:57.234 [Warning] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-17 23:29:57.295 [Information] Executed DbCommand ("17"ms) [Parameters=["@__p_0='0', @__p_1='10'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[OwnerId], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+FROM [Restaurants] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY"
+2024-11-17 23:29:57.376 [Information] HTTP "GET" "/api/restaurants" responded 200 in 306.9759 ms
+2024-11-17 23:31:49.395 [Information] Application is shutting down...
+2024-11-17 23:40:45.630 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-11-17 23:40:45.724 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-11-17 23:40:45.732 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-11-17 23:40:46.015 [Information] Executed DbCommand ("24"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-11-17 23:40:46.172 [Information] Executed DbCommand ("7"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-11-17 23:40:46.186 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [AspNetRoles] AS [a]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-11-17 23:40:46.230 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Restaurants] AS [r]"
+2024-11-17 23:40:46.336 [Information] Now listening on: "http://localhost:5298"
+2024-11-17 23:40:46.338 [Information] Application started. Press Ctrl+C to shut down.
+2024-11-17 23:40:46.339 [Information] Hosting environment: "Development"
+2024-11-17 23:40:46.339 [Information] Content root path: "/Users/loganathansellappa/projects/Restuarants/src/Restaurants.API"
+2024-11-17 23:40:46.847 [Warning] Failed to determine the https port for redirect.
+2024-11-17 23:40:46.897 [Information] HTTP "GET" "/weatherforecast" responded 200 in 62.2605 ms
+2024-11-17 23:40:50.704 [Error] Unable to get current user
+2024-11-17 23:40:50.707 [Information] HTTP "GET" "/api/restaurants/1" responded 401 in 12.8351 ms
+2024-11-17 23:40:53.938 [Information] HTTP "GET" "/api/restaurants" responded 400 in 98.3916 ms
+2024-11-17 23:40:56.451 [Information] Retrieving all restaurants
+2024-11-17 23:40:56.495 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT COUNT(*)
+FROM [Restaurants] AS [r]"
+2024-11-17 23:40:56.514 [Warning] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-17 23:40:56.514 [Warning] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-11-17 23:40:56.575 [Information] Executed DbCommand ("16"ms) [Parameters=["@__p_0='0', @__p_1='10'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[OwnerId], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+FROM [Restaurants] AS [r]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY"
+2024-11-17 23:40:56.657 [Information] HTTP "GET" "/api/restaurants" responded 200 in 307.1401 ms
+2024-11-17 23:41:01.716 [Error] Unable to get current user
+2024-11-17 23:41:01.718 [Information] HTTP "GET" "/api/restaurants/2" responded 401 in 3.2929 ms
+2024-11-17 23:42:59.265 [Information] Executed DbCommand ("47"ms) [Parameters=["@__normalizedUserName_0='USER@TESTDEVLOGAN.COM' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nationality], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2024-11-17 23:42:59.302 [Information] HTTP "POST" "/api/identity/register" responded 400 in 241.9758 ms
+2024-11-17 23:43:05.906 [Information] Executed DbCommand ("4"ms) [Parameters=["@__normalizedUserName_0='TESTUSER@TESTDEVLOGAN.COM' (Size = 256)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[DateOfBirth], [a].[Email], [a].[EmailConfirmed], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[Nationality], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0"
+2024-11-17 23:43:06.001 [Information] Executed DbCommand ("10"ms) [Parameters=["@__user_Id_0='f354d542-a0c8-4afe-9008-8ca835040405' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0"
+2024-11-17 23:43:06.033 [Information] Executed DbCommand ("17"ms) [Parameters=["@__userId_0='f354d542-a0c8-4afe-9008-8ca835040405' (Size = 450)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0"
+2024-11-17 23:43:06.047 [Information] HTTP "POST" "/api/identity/login" responded 200 in 152.6714 ms

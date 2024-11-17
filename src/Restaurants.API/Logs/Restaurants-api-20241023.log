@@ -1,0 +1,747 @@
+2024-10-23 21:10:44.422 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-23 21:10:44.486 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-10-23 21:10:44.493 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-23 21:10:59.405 [Fatal] Application startup exception
+Microsoft.AspNetCore.Routing.Patterns.RoutePatternException: The route parameter name 'restaurantId' appears more than one time in the route template.
+   at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.AddEndpoints(List`1 endpoints, HashSet`1 routeNames, ActionDescriptor action, IReadOnlyList`1 routes, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions, Boolean createInertEndpoints, RoutePattern groupPrefix)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource.CreateEndpoints(RoutePattern groupPrefix, IReadOnlyList`1 actions, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.UpdateEndpoints()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Initialize()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateChangeTokenUnsynchronized(Boolean collectionChanged)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureChangeTokenInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.GetChangeToken()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-10-23 21:10:59.407 [Error] Hosting failed to start
+Microsoft.AspNetCore.Routing.Patterns.RoutePatternException: The route parameter name 'restaurantId' appears more than one time in the route template.
+   at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.AddEndpoints(List`1 endpoints, HashSet`1 routeNames, ActionDescriptor action, IReadOnlyList`1 routes, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions, Boolean createInertEndpoints, RoutePattern groupPrefix)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource.CreateEndpoints(RoutePattern groupPrefix, IReadOnlyList`1 actions, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.UpdateEndpoints()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Initialize()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateChangeTokenUnsynchronized(Boolean collectionChanged)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureChangeTokenInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.GetChangeToken()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-23 21:12:41.124 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-23 21:12:41.178 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-10-23 21:12:41.184 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-23 21:12:41.507 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-10-23 21:12:41.666 [Information] Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-10-23 21:12:41.725 [Fatal] Application startup exception
+Microsoft.AspNetCore.Routing.Patterns.RoutePatternException: The route parameter name 'restaurantId' appears more than one time in the route template.
+   at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.AddEndpoints(List`1 endpoints, HashSet`1 routeNames, ActionDescriptor action, IReadOnlyList`1 routes, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions, Boolean createInertEndpoints, RoutePattern groupPrefix)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource.CreateEndpoints(RoutePattern groupPrefix, IReadOnlyList`1 actions, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.UpdateEndpoints()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Initialize()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateChangeTokenUnsynchronized(Boolean collectionChanged)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureChangeTokenInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.GetChangeToken()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-10-23 21:12:41.731 [Error] Hosting failed to start
+Microsoft.AspNetCore.Routing.Patterns.RoutePatternException: The route parameter name 'restaurantId' appears more than one time in the route template.
+   at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.AddEndpoints(List`1 endpoints, HashSet`1 routeNames, ActionDescriptor action, IReadOnlyList`1 routes, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions, Boolean createInertEndpoints, RoutePattern groupPrefix)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource.CreateEndpoints(RoutePattern groupPrefix, IReadOnlyList`1 actions, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.UpdateEndpoints()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Initialize()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateChangeTokenUnsynchronized(Boolean collectionChanged)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureChangeTokenInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.GetChangeToken()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-23 21:12:55.874 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-23 21:12:55.929 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-10-23 21:12:55.935 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-23 21:12:56.150 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-10-23 21:12:56.275 [Information] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-10-23 21:12:56.338 [Fatal] Application startup exception
+Microsoft.AspNetCore.Routing.Patterns.RoutePatternException: The route parameter name 'restaurantId' appears more than one time in the route template.
+   at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.AddEndpoints(List`1 endpoints, HashSet`1 routeNames, ActionDescriptor action, IReadOnlyList`1 routes, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions, Boolean createInertEndpoints, RoutePattern groupPrefix)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource.CreateEndpoints(RoutePattern groupPrefix, IReadOnlyList`1 actions, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.UpdateEndpoints()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Initialize()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateChangeTokenUnsynchronized(Boolean collectionChanged)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureChangeTokenInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.GetChangeToken()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2024-10-23 21:12:56.344 [Error] Hosting failed to start
+Microsoft.AspNetCore.Routing.Patterns.RoutePatternException: The route parameter name 'restaurantId' appears more than one time in the route template.
+   at Microsoft.AspNetCore.Routing.Patterns.RoutePatternParser.Parse(String pattern)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointFactory.AddEndpoints(List`1 endpoints, HashSet`1 routeNames, ActionDescriptor action, IReadOnlyList`1 routes, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions, Boolean createInertEndpoints, RoutePattern groupPrefix)
+   at Microsoft.AspNetCore.Mvc.Routing.ControllerActionEndpointDataSource.CreateEndpoints(RoutePattern groupPrefix, IReadOnlyList`1 actions, IReadOnlyList`1 conventions, IReadOnlyList`1 groupConventions, IReadOnlyList`1 finallyConventions, IReadOnlyList`1 groupFinallyConventions)
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.UpdateEndpoints()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.Initialize()
+   at Microsoft.AspNetCore.Mvc.Routing.ActionEndpointDataSourceBase.GetChangeToken()
+   at Microsoft.Extensions.Primitives.ChangeToken.ChangeTokenRegistration`1..ctor(Func`1 changeTokenProducer, Action`1 changeTokenConsumer, TState state)
+   at Microsoft.Extensions.Primitives.ChangeToken.OnChange(Func`1 changeTokenProducer, Action changeTokenConsumer)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.CreateChangeTokenUnsynchronized(Boolean collectionChanged)
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.EnsureChangeTokenInitialized()
+   at Microsoft.AspNetCore.Routing.CompositeEndpointDataSource.GetChangeToken()
+   at Microsoft.AspNetCore.Routing.DataSourceDependentCache`1.Initialize()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.AspNetCore.Authorization.Policy.AuthorizationPolicyCache..ctor(EndpointDataSource dataSource)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitConstructor(ConstructorCallSite constructorCallSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSiteMain(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.VisitRootCache(ServiceCallSite callSite, RuntimeResolverContext context)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteVisitor`2.VisitCallSite(ServiceCallSite callSite, TArgument argument)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteRuntimeResolver.Resolve(ServiceCallSite callSite, ServiceProviderEngineScope scope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.CreateServiceAccessor(ServiceIdentifier serviceIdentifier)
+   at System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(ServiceIdentifier serviceIdentifier, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.ServiceProviderEngineScope.GetService(Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetService[T](IServiceProvider provider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware..ctor(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, IServiceProvider services)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddlewareInternal..ctor(RequestDelegate next, IServiceProvider services, IAuthorizationPolicyProvider policyProvider, ILogger`1 logger)
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.ConstructorMatcher.CreateInstance(IServiceProvider provider)
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.ReflectionMiddlewareBinder.CreateMiddleware(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-10-23 21:13:56.891 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-23 21:13:56.958 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-10-23 21:13:56.964 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-23 21:13:57.202 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-10-23 21:13:57.328 [Information] Executed DbCommand ("9"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-10-23 21:13:57.395 [Information] Now listening on: "http://localhost:5298"
+2024-10-23 21:13:57.397 [Information] Application started. Press Ctrl+C to shut down.
+2024-10-23 21:13:57.397 [Information] Hosting environment: "Development"
+2024-10-23 21:13:57.397 [Information] Content root path: "/Users/loganathansellappa/projects/Restuarants/Restaurants.API"
+2024-10-23 21:13:58.039 [Warning] Failed to determine the https port for redirect.
+2024-10-23 21:13:58.099 [Information] HTTP "GET" "/weatherforecast" responded 200 in 67.1169 ms
+2024-10-23 21:21:31.389 [Information] Retrieving all restaurants
+2024-10-23 21:21:31.538 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]"
+2024-10-23 21:21:31.620 [Information] HTTP "GET" "/api/restaurants" responded 200 in 290.5106 ms
+2024-10-23 21:21:41.974 [Information] Deleting dishes for restaurant - 1003
+2024-10-23 21:21:42.062 [Information] Executed DbCommand ("50"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:21:42.070 [Information] Executed DbCommand ("4"ms) [Parameters=["@__restaurantId_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Dishes] AS [d]
+WHERE [d].[RestaurantId] = @__restaurantId_0"
+2024-10-23 21:21:42.153 [Information] Executed DbCommand ("21"ms) [Parameters=["@p0='11', @p1='12'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p1;"
+2024-10-23 21:21:42.169 [Information] HTTP "DELETE" "/api/restaurants/1003/dishes" responded 204 in 221.0690 ms
+2024-10-23 21:21:45.285 [Information] Deleting dishes for restaurant - 1003
+2024-10-23 21:21:45.290 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:21:45.293 [Information] Executed DbCommand ("2"ms) [Parameters=["@__restaurantId_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Dishes] AS [d]
+WHERE [d].[RestaurantId] = @__restaurantId_0"
+2024-10-23 21:21:45.294 [Information] HTTP "DELETE" "/api/restaurants/1003/dishes" responded 204 in 9.8295 ms
+2024-10-23 21:21:47.682 [Information] Deleting dishes for restaurant - 1003
+2024-10-23 21:21:47.685 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:21:47.689 [Information] Executed DbCommand ("2"ms) [Parameters=["@__restaurantId_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Dishes] AS [d]
+WHERE [d].[RestaurantId] = @__restaurantId_0"
+2024-10-23 21:21:47.689 [Information] HTTP "DELETE" "/api/restaurants/1003/dishes" responded 204 in 9.5791 ms
+2024-10-23 21:21:48.505 [Information] Deleting dishes for restaurant - 1003
+2024-10-23 21:21:48.509 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:21:48.512 [Information] Executed DbCommand ("2"ms) [Parameters=["@__restaurantId_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Dishes] AS [d]
+WHERE [d].[RestaurantId] = @__restaurantId_0"
+2024-10-23 21:21:48.513 [Information] HTTP "DELETE" "/api/restaurants/1003/dishes" responded 204 in 8.2505 ms
+2024-10-23 21:21:52.059 [Information] Retrieving dish: GetDishByIdForRestaurantQuery { RestaurantId: 1003, DishId: 1 }
+2024-10-23 21:21:52.064 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:21:52.066 [Error] HTTP "GET" "/api/restaurants/1003/dishes/1" responded 500 in 15.2360 ms
+Restaurants.Domain.Exceptions.NotFoundException: Dish 1 not found
+   at Restaurants.Application.Dishes.Queries.GetDishByIdForRestaurant.GetDishByIdForRestaurantHandler.Handle(GetDishByIdForRestaurantQuery request, CancellationToken cancellationToken) in /Users/loganathansellappa/projects/Restuarants/Restaurants.Application/Dishes/Queries/GetDishByIdForRestaurant/GetDishByIdForRestaurantHandler.cs:line 19
+   at Restaurants.API.Controllers.DishesController.GetByIdForRestaurant(Int32 restaurantId, Int32 dishId) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Controllers/DishesController.cs:line 40
+   at lambda_method236(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-10-23 21:21:52.078 [Error] Dish 1 not found
+Restaurants.Domain.Exceptions.NotFoundException: Dish 1 not found
+   at Restaurants.Application.Dishes.Queries.GetDishByIdForRestaurant.GetDishByIdForRestaurantHandler.Handle(GetDishByIdForRestaurantQuery request, CancellationToken cancellationToken) in /Users/loganathansellappa/projects/Restuarants/Restaurants.Application/Dishes/Queries/GetDishByIdForRestaurant/GetDishByIdForRestaurantHandler.cs:line 19
+   at Restaurants.API.Controllers.DishesController.GetByIdForRestaurant(Int32 restaurantId, Int32 dishId) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Controllers/DishesController.cs:line 40
+   at lambda_method236(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurants.API.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Middlewares/LoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Middlewares/ErrorHandlingMiddleware.cs:line 11
+2024-10-23 21:21:57.888 [Information] Retrieving all restaurants
+2024-10-23 21:21:57.891 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]"
+2024-10-23 21:21:57.902 [Information] HTTP "GET" "/api/restaurants" responded 200 in 14.8797 ms
+2024-10-23 21:21:59.160 [Information] Retrieving all restaurants
+2024-10-23 21:21:59.164 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]"
+2024-10-23 21:21:59.165 [Information] HTTP "GET" "/api/restaurants" responded 200 in 5.6123 ms
+2024-10-23 21:22:26.626 [Information] Retrieving restaurant with id: 1003, RequestData: GetRestaurantByIdQuery { Id: 1003 }
+2024-10-23 21:22:26.630 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:22:26.633 [Information] HTTP "GET" "/api/restaurants/1003" responded 200 in 11.6231 ms
+2024-10-23 21:22:51.802 [Information] HTTP "DELETE" "/api/restaurants/ui/dishes" responded 400 in 26.7446 ms
+2024-10-23 21:22:58.107 [Information] Deleting dishes for restaurant - 0
+2024-10-23 21:22:58.114 [Information] Executed DbCommand ("5"ms) [Parameters=["@__id_0='0'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:22:58.115 [Error] HTTP "DELETE" "/api/restaurants/00/dishes" responded 500 in 8.9507 ms
+Restaurants.Domain.Exceptions.NotFoundException: Restaurant request.RestaurantId not found
+   at Restaurants.Application.Dishes.Queries.DeleteAllDishesForRestaurant.DeleteAllDishesForRestaurantHandler.Handle(DeleteAllDishesForRestaurantCommand request, CancellationToken cancellationToken) in /Users/loganathansellappa/projects/Restuarants/Restaurants.Application/Dishes/Queries/DeleteAllDishesForRestaurant/DeleteAllDishesForRestaurantHandler.cs:line 18
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Controllers.DishesController.DeleteById(Int32 restaurantId) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Controllers/DishesController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-10-23 21:22:58.117 [Error] Restaurant request.RestaurantId not found
+Restaurants.Domain.Exceptions.NotFoundException: Restaurant request.RestaurantId not found
+   at Restaurants.Application.Dishes.Queries.DeleteAllDishesForRestaurant.DeleteAllDishesForRestaurantHandler.Handle(DeleteAllDishesForRestaurantCommand request, CancellationToken cancellationToken) in /Users/loganathansellappa/projects/Restuarants/Restaurants.Application/Dishes/Queries/DeleteAllDishesForRestaurant/DeleteAllDishesForRestaurantHandler.cs:line 18
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Controllers.DishesController.DeleteById(Int32 restaurantId) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Controllers/DishesController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurants.API.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Middlewares/LoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Middlewares/ErrorHandlingMiddleware.cs:line 11
+2024-10-23 21:22:59.104 [Information] Deleting dishes for restaurant - 0
+2024-10-23 21:22:59.107 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='0'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:22:59.108 [Error] HTTP "DELETE" "/api/restaurants/00/dishes" responded 500 in 4.5685 ms
+Restaurants.Domain.Exceptions.NotFoundException: Restaurant request.RestaurantId not found
+   at Restaurants.Application.Dishes.Queries.DeleteAllDishesForRestaurant.DeleteAllDishesForRestaurantHandler.Handle(DeleteAllDishesForRestaurantCommand request, CancellationToken cancellationToken) in /Users/loganathansellappa/projects/Restuarants/Restaurants.Application/Dishes/Queries/DeleteAllDishesForRestaurant/DeleteAllDishesForRestaurantHandler.cs:line 18
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Controllers.DishesController.DeleteById(Int32 restaurantId) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Controllers/DishesController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-10-23 21:22:59.109 [Error] Restaurant request.RestaurantId not found
+Restaurants.Domain.Exceptions.NotFoundException: Restaurant request.RestaurantId not found
+   at Restaurants.Application.Dishes.Queries.DeleteAllDishesForRestaurant.DeleteAllDishesForRestaurantHandler.Handle(DeleteAllDishesForRestaurantCommand request, CancellationToken cancellationToken) in /Users/loganathansellappa/projects/Restuarants/Restaurants.Application/Dishes/Queries/DeleteAllDishesForRestaurant/DeleteAllDishesForRestaurantHandler.cs:line 18
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`1.<>c__DisplayClass1_0.<<Handle>g__Handler|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Controllers.DishesController.DeleteById(Int32 restaurantId) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Controllers/DishesController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Logged|12_1(ControllerActionInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Restaurants.API.Middlewares.LoggingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Middlewares/LoggingMiddleware.cs:line 10
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.InterfaceMiddlewareBinder.<>c__DisplayClass2_0.<<CreateMiddleware>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Restaurants.API.Middlewares.ErrorHandlingMiddleware.InvokeAsync(HttpContext context, RequestDelegate next) in /Users/loganathansellappa/projects/Restuarants/Restaurants.API/Middlewares/ErrorHandlingMiddleware.cs:line 11
+2024-10-23 21:54:15.111 [Information] Application is shutting down...
+2024-10-23 21:54:28.928 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-23 21:54:28.993 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-10-23 21:54:29.000 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-23 21:54:29.272 [Information] Executed DbCommand ("18"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-10-23 21:54:29.398 [Information] Executed DbCommand ("6"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-10-23 21:54:29.534 [Information] Now listening on: "http://localhost:5298"
+2024-10-23 21:54:29.536 [Information] Application started. Press Ctrl+C to shut down.
+2024-10-23 21:54:29.536 [Information] Hosting environment: "Development"
+2024-10-23 21:54:29.536 [Information] Content root path: "/Users/loganathansellappa/projects/Restuarants/Restaurants.API"
+2024-10-23 21:54:29.878 [Warning] Failed to determine the https port for redirect.
+2024-10-23 21:54:29.949 [Information] HTTP "GET" "/weatherforecast" responded 200 in 76.7054 ms
+2024-10-23 21:55:45.989 [Information] Creating new dish: CreateDishCommand { Name: "Dish 2", Description: "Dish 1 description", Price: 10, KiloCalories: 1, RestaurantId: 1003 }
+2024-10-23 21:55:46.126 [Information] Executed DbCommand ("32"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:55:46.292 [Information] Executed DbCommand ("42"ms) [Parameters=["@p0='Dish 1 description' (Nullable = false) (Size = 4000), @p1='1' (Nullable = true), @p2='Dish 2' (Nullable = false) (Size = 4000), @p3='10' (Precision = 18) (Scale = 2), @p4='1003'"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Dishes] ([Description], [KiloCalories], [Name], [Price], [RestaurantId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2024-10-23 21:55:46.309 [Information] HTTP "POST" "/api/restaurants/1003/dishes" responded 204 in 422.0575 ms
+2024-10-23 21:55:54.418 [Information] Retrieving restaurant with id: 1003, RequestData: GetRestaurantByIdQuery { Id: 1003 }
+2024-10-23 21:55:54.440 [Information] Executed DbCommand ("2"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:55:54.454 [Information] HTTP "GET" "/api/restaurants/1003" responded 200 in 43.3962 ms
+2024-10-23 21:56:01.760 [Information] Deleting dishes for restaurant - 1003
+2024-10-23 21:56:01.765 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:56:01.791 [Information] Executed DbCommand ("20"ms) [Parameters=["@p0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p0;"
+2024-10-23 21:56:01.796 [Information] HTTP "DELETE" "/api/restaurants/1003/dishes" responded 204 in 43.1233 ms
+2024-10-23 21:56:05.830 [Information] Creating new dish: CreateDishCommand { Name: "Dish 2", Description: "Dish 1 description", Price: 10, KiloCalories: 1, RestaurantId: 1003 }
+2024-10-23 21:56:05.835 [Information] Executed DbCommand ("4"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:56:05.843 [Information] Executed DbCommand ("5"ms) [Parameters=["@p0='Dish 1 description' (Nullable = false) (Size = 4000), @p1='1' (Nullable = true), @p2='Dish 2' (Nullable = false) (Size = 4000), @p3='10' (Precision = 18) (Scale = 2), @p4='1003'"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Dishes] ([Description], [KiloCalories], [Name], [Price], [RestaurantId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2024-10-23 21:56:05.843 [Information] HTTP "POST" "/api/restaurants/1003/dishes" responded 204 in 15.9584 ms
+2024-10-23 21:56:07.605 [Information] Creating new dish: CreateDishCommand { Name: "Dish 2", Description: "Dish 1 description", Price: 10, KiloCalories: 1, RestaurantId: 1003 }
+2024-10-23 21:56:07.610 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:56:07.616 [Information] Executed DbCommand ("5"ms) [Parameters=["@p0='Dish 1 description' (Nullable = false) (Size = 4000), @p1='1' (Nullable = true), @p2='Dish 2' (Nullable = false) (Size = 4000), @p3='10' (Precision = 18) (Scale = 2), @p4='1003'"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Dishes] ([Description], [KiloCalories], [Name], [Price], [RestaurantId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2024-10-23 21:56:07.616 [Information] HTTP "POST" "/api/restaurants/1003/dishes" responded 204 in 13.5938 ms
+2024-10-23 21:56:12.483 [Information] Updating restaurant
+2024-10-23 21:56:12.507 [Information] Executed DbCommand ("13"ms) [Parameters=["@__p_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+FROM [Restaurants] AS [r]
+WHERE [r].[Id] = @__p_0"
+2024-10-23 21:56:12.508 [Information] HTTP "PUT" "/api/restaurants" responded 204 in 46.5684 ms
+2024-10-23 21:56:31.727 [Information] Retrieving all restaurants
+2024-10-23 21:56:31.740 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM [Restaurants] AS [r]
+LEFT JOIN [Dishes] AS [d] ON [r].[Id] = [d].[RestaurantId]
+ORDER BY [r].[Id]"
+2024-10-23 21:56:31.746 [Information] HTTP "GET" "/api/restaurants" responded 200 in 22.6135 ms
+2024-10-23 21:56:38.865 [Information] Deleting dishes for restaurant - 1003
+2024-10-23 21:56:38.869 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:56:38.888 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='1004', @p1='1005'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p0;
+DELETE FROM [Dishes]
+OUTPUT 1
+WHERE [Id] = @p1;"
+2024-10-23 21:56:38.896 [Information] HTTP "DELETE" "/api/restaurants/1003/dishes" responded 204 in 31.8466 ms
+2024-10-23 21:56:47.358 [Information] Retrieving restaurant with id: 1003, RequestData: GetRestaurantByIdQuery { Id: 1003 }
+2024-10-23 21:56:47.361 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 21:56:47.362 [Information] HTTP "GET" "/api/restaurants/1003" responded 200 in 5.1933 ms
+2024-10-23 22:01:15.317 [Information] Application is shutting down...
+2024-10-23 22:01:19.815 [Warning] Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2024-10-23 22:01:19.881 [Warning] The entity type '"Address"' is an optional dependent using table sharing without any required non shared property that could be used to identify whether the entity exists. If all nullable properties contain a null value in database then an object instance won't be created in the query. Add a required property to create instances with null values for other properties or mark the incoming navigation as required to always create an instance.
+2024-10-23 22:01:19.888 [Warning] No store type was specified for the decimal property '"Price"' on entity type '"Dish"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-10-23 22:01:20.157 [Information] Executed DbCommand ("19"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT 1"
+2024-10-23 22:01:20.291 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Restaurants] AS [r]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END"
+2024-10-23 22:01:20.359 [Information] Now listening on: "http://localhost:5298"
+2024-10-23 22:01:20.361 [Information] Application started. Press Ctrl+C to shut down.
+2024-10-23 22:01:20.361 [Information] Hosting environment: "Development"
+2024-10-23 22:01:20.361 [Information] Content root path: "/Users/loganathansellappa/projects/Restuarants/Restaurants.API"
+2024-10-23 22:01:20.593 [Warning] Failed to determine the https port for redirect.
+2024-10-23 22:01:20.630 [Information] HTTP "GET" "/weatherforecast" responded 200 in 43.0333 ms
+2024-10-23 22:02:16.077 [Information] Creating new dish: CreateDishCommand { Name: "Dish 2", Description: "Dish 1 description", Price: 10, KiloCalories: 1, RestaurantId: 1003 }
+2024-10-23 22:02:16.228 [Information] Executed DbCommand ("36"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 22:02:16.357 [Information] Executed DbCommand ("12"ms) [Parameters=["@p0='Dish 1 description' (Nullable = false) (Size = 4000), @p1='1' (Nullable = true), @p2='Dish 2' (Nullable = false) (Size = 4000), @p3='10' (Precision = 18) (Scale = 2), @p4='1003'"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Dishes] ([Description], [KiloCalories], [Name], [Price], [RestaurantId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2024-10-23 22:02:16.383 [Information] HTTP "POST" "/api/restaurants/1003/dishes" responded 201 in 431.8130 ms
+2024-10-23 22:02:42.137 [Information] Creating new dish: CreateDishCommand { Name: "Dish 3", Description: "Dish 1 description", Price: 10, KiloCalories: 1, RestaurantId: 1003 }
+2024-10-23 22:02:42.166 [Information] Executed DbCommand ("3"ms) [Parameters=["@__id_0='1003'"], CommandType='Text', CommandTimeout='30']"
+""SELECT [t].[Id], [t].[Category], [t].[ContactEmail], [t].[ContactNumber], [t].[Description], [t].[HasDelivery], [t].[Name], [t].[Address_City], [t].[Address_PostalCode], [t].[Address_Street], [d].[Id], [d].[Description], [d].[KiloCalories], [d].[Name], [d].[Price], [d].[RestaurantId]
+FROM (
+    SELECT TOP(1) [r].[Id], [r].[Category], [r].[ContactEmail], [r].[ContactNumber], [r].[Description], [r].[HasDelivery], [r].[Name], [r].[Address_City], [r].[Address_PostalCode], [r].[Address_Street]
+    FROM [Restaurants] AS [r]
+    WHERE [r].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Dishes] AS [d] ON [t].[Id] = [d].[RestaurantId]
+ORDER BY [t].[Id]"
+2024-10-23 22:02:42.176 [Information] Executed DbCommand ("5"ms) [Parameters=["@p0='Dish 1 description' (Nullable = false) (Size = 4000), @p1='1' (Nullable = true), @p2='Dish 3' (Nullable = false) (Size = 4000), @p3='10' (Precision = 18) (Scale = 2), @p4='1003'"], CommandType='Text', CommandTimeout='30']"
+""SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Dishes] ([Description], [KiloCalories], [Name], [Price], [RestaurantId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);"
+2024-10-23 22:02:42.177 [Information] HTTP "POST" "/api/restaurants/1003/dishes" responded 201 in 43.9389 ms
+2024-10-23 22:09:59.363 [Information] Application is shutting down...

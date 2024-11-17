@@ -1,0 +1,150 @@
+@API_HostAddress = http://localhost:5298
+@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb4UU1sq5w9uQxyHlbycv55dFqgdhXAr2W5sA4Vhv6oITd6xeQDpBUKfXyf27hZq00XOmZfVSUTjaL1MIvLIPwiy98mkKmGDBKuJeuy952QUzFw0QK5ndCKrvbGgEWwmnN0rU1TSCGDgcTlqgoXoz7dDSzHOFlqXKuMtPdjOFw70YPMsiqedugcibb4sQLxlX-IFwnZzAR3aLQ-tcMv7gzgA-YbKthgFGm8ZXUtBqy0i2_jBuEpFdwAZNt92VoN8jtrab_ax36QPd4mEPmyaXEs3UNv8hePrRxuGpZSciqq3uyuJHnIeKFsiGakZCb1wNCIb3xejt-49Ey_Ih8Pfbvqn8DFhpnd6hv5aQOrWuHJjThmAupdtRbb0rdhRnBbHfb9Tf8u-quumdyLDbUDGOEqXPHU1Hu1QpkRb3F1DhGm8Z3clUm5XeUMcSzOzjWhvpM_xjeBwHc-TPcYNyJw1ONJM3JBkM9pDUXtJU6Dlk2dA4A-rp5CS4tEvll0DvRtawyGx5S0z1ba5SMO7ojNmd-PdgSbAicDOqQ86EJdmFceOUyxXD_wiGpGZ91k8vlaDqxmsbZRmHi-_1D5GtbuBv8le0N3LXJ9UPLs13LD1lPobijiAnTnpeYkczdMxHVZ1KtnS1t4dQpD8q4fS_wsk46SQu4skT57SiM-8EqwLp9fFqNz2jU_1OVPBCDREFk6nVf8KKiSh_wm8eNn_vDjoLUjnxj6-VMp3mb952dYLaO9VdzSDzfojgXtycd3-mIzaja9G-78rHkhIcBT5uuXhZiuU
+
+###
+POST {{API_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+  "email": "user@testdevlogan.com",
+  "password": "abcTest123!"
+}
+
+###
+POST {{API_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "testuser@testdevlogan.com",
+  "password": "abcTest123!"
+}
+
+###
+POST {{API_HostAddress}}/api/identity/userRole
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+{
+  "UserEmail": "owner@testdevlogan.com",
+  "RoleName": "Owner"
+}
+
+###
+DELETE {{API_HostAddress}}/api/identity/userRole
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+{
+  "UserEmail": "owner@testdevlogan.com",
+  "RoleName": "owner"
+}
+
+
+###
+PATCH {{API_HostAddress}}/api/identity/user
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+{
+  "DateOfBirth": "1990-01-01",
+  "Nationality": "Deutch"
+}
+
+
+###
+GET {{API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+
+###
+GET {{API_HostAddress}}/api/restaurants?searchTerm=restaurant&pageNumber=1&pageSize=15&sortBy=Name&sortDirection=Descending
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+###
+POST {{API_HostAddress}}/api/restaurants
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+
+{
+  "Name": "AdminRestaurant",
+  "Description": "Fast food restaurant",
+  "Category": "Indian",
+  "HasDelivery": true,
+  "ContactEmail": "admin@abc.com",
+  "City": "London",
+  "Street": "Baker Street",
+  "PostalCode": "12-345"
+}
+
+###
+PUT {{API_HostAddress}}/api/restaurants
+Content-Type: application/json
+Authorization: {{API_Token}}
+
+{
+  "id": "1003",
+  "Name": "OwnerChanged the name",
+  "Description": "Updated description",
+  "HasDelivery": false
+}
+
+
+###
+GET {{API_HostAddress}}/api/restaurants/1003
+Accept: application/json
+Authorization: {{API_Token}}
+
+<> 2024-10-03T225827.200.json
+
+###
+DELETE {{API_HostAddress}}/api/restaurants/19
+Accept: application/json
+Authorization: {{API_Token}}
+
+<> 2024-10-03T225827.200.json
+
+
+
+
+###
+POST {{API_HostAddress}}/api/restaurants/1003/dishes
+Accept: application/json
+Authorization: {{API_Token}}
+
+
+{
+  "Name": "Dish 3",
+  "Description": "Dish 1 description",
+  "KiloCalories": 1,
+  "Price": 10
+}
+
+###
+GET {{API_HostAddress}}/api/restaurants/1003/dishes/1
+Accept: application/json
+Authorization: {{API_Token}}
+
+<> 2024-10-03T140155.200.json
+
+###
+DELETE {{API_HostAddress}}/api/restaurants/1003/dishes
+Accept: application/json
+Authorization: {{API_Token}}
+
+<> 2024-10-03T140155.200.json
+
+
+###
+
+# curl -X 'GET' 
+#  'http://localhost:5298/api/restaurants' 
+#  -H 'accept: application/json' 
+#  -H 'Authorization: Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb4mBS4kRfV5EbEJqT6Zm5CzVzSf9FEthrPqqcgtmgCSa-3DueggeW00VmaBFus1dU4w_uSWeqoN5H7oYPhDrQb066lt3OuZNwppGi3RJGlP2Km93AJZMDICqLgkDsvyxIWI6QfytCDrE68-IA9aAjWNE7jBr23nrOlaO01LUU3ep3nWH15HyXcA6BvywrUC8chpKvxAstgXK9oum5kMkuA5Z7RNeCv3tpB9HlYIGz_PHrVeyaJfkei4I2ZoTGkwdE4FIZmtIdDOLdPJWnifRYx00ZVnte3N5LqhC5ZuVlis-f-bu2YLgJPoC43REtIBMuB6630mNWSiIR0Vc_o0ERbC4P5Li34HSpWVhwlJcfV8bo3HVDwNncWw5iJjo7ulviv3QDbdRpgIomiyFNOx-1Ck7w01eEuEtttJtkPMSAeMa8Mccdcx8GhgLg2l52_4edZca6FXancpZkgHyeTLhIvqvp-2inWnYw9rSJT6v9NPKC6VIUf9_fx2OpyuGy4RWsTHbPjqe5ISIWUg83QYf8tb6WkXGCc2zVsNuinUKK2ES-V3iVaM9KD7vtTclcgiCqQzXWUTClSKBsyofoKK8MvTT57SKx1Y3jMnAIDkgpBcCfuUoP6WEm5e4bhfQv-sr0jxuR8GAmgeaUU0qbEWmA3o0k8Z2t8V8JLhBG8wS7OY_A'
+GET {{API_HostAddress}}/api/restaurants
+Accept: application/json
+Authorization: {{API_Token}}
+
+###
+
