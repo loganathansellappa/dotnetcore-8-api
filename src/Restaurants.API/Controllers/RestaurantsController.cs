@@ -5,6 +5,7 @@ using Restaurants.Application.Restaurants;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
 using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
+using Restaurants.Application.Restaurants.Commands.UploadRestaurantLogo;
 using Restaurants.Application.Restaurants.Dtos;
 using Restaurants.Application.Restaurants.Queries.GetAllRestaurants;
 using Restaurants.Application.Restaurants.Queries.GetRestaurantById;
@@ -70,4 +71,23 @@ public class RestaurantsController(IMediator mediator) : ControllerBase
         await mediator.Send(command);
         return NoContent();
     }
+    
+    [HttpPost]
+    [Route("{restaurantId}/logo")]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    public async Task<IActionResult> UploadLogo([FromRoute]int id, IFormFile file)
+    {
+        using var stream = file.OpenReadStream();
+        var command = new UploadRestaurantLogoCommand()
+        {
+            Id = id,
+            File = stream,
+            FileName = file.FileName
+
+        };
+            
+         await mediator.Send(command);
+        return NoContent();
+    }   
 }
