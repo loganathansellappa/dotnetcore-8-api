@@ -1,6 +1,7 @@
 .idea/
 .DS_Store
 obj/
+Restaurants
 Restaurants.API/obj
 Restaurants.API/bin
 Restaurants.Infrastructure/obj
