@@ -3,6 +3,8 @@
 obj/
 Restaurants
 Restaurants.API/obj
+src/Restaurants.API/Logs/
+src/Restaurants.API/bin/
 ./src/Restaurants.API/Logs/
 ./src/Restaurants.API/obj
 ./src/Restaurants.API/bin
