@@ -10,4 +10,6 @@ Restaurants.Domain/obj
 Restaurants.Domain/bin
 Restaurants.Application/obj
 Restaurants.Application/bin
+/src/Restaurants.API/bin
+/src/Restaurants.API/Logs
 /Restaurants.Application.Tests/bin/
