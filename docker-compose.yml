@@ -1,0 +1,26 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      platforms:
+        - linux/arm64/v8
+      
+    ports:
+      - "5001:3000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__RestaurantsDb=Server=db;Database=Restaurants;User Id=sa;Password=dockerStrongPwd123;TrustServerCertificate=true;
+      - BLOB_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=restaurants;AccountKey=7YlW9i7Qs0uQhZd6kKjgNw7MwJl6QJ7qYVx3kMl8d5R2xw9aM6HvFZg==;EndpointSuffix=core.windows.net
+    volumes:
+      - ./logs:/app/logs
+    depends_on:
+      - db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "dockerStrongPwd123"
+    ports:
+      - "1433:1433"
