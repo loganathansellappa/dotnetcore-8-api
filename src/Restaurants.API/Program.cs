@@ -13,7 +13,7 @@ try
     var scope = app.Services.CreateScope();
     var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 
-    await seeder.Seed();
+    //await seeder.Seed();
     await seeder.SeedRandomDataWithHardcodedUser(5000);
 
     app.UseMiddleware<ErrorHandlingMiddleware>();
