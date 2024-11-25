@@ -26,3 +26,5 @@ src/Restaurants.Infrastructure/bin
 # Ignore build output in test projects
 ./src/tests/**/bin/
 ./src/tests/**/obj/
+tests/**/bin/
+tests/**/obj/
