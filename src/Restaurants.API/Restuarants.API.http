@@ -1,6 +1,6 @@
-@API_HostAddress = http://localhost:8080
-@API_Token = Bearer CfDJ8GElexrW1blKvFWYRAH9-wHUXyzZmhjDXkJykoQYynZQ2V5Z4rz7MIfN16P-qIrnD2yYEMI3Uuye-myT0Tw9T34nGDnJJmeYGtaqjEko83hwwhnGjlEGxn5EX6clOlmhdK-xWGrIvaHXm2sWeECyjLk43qUyIav9zPKysSjoB7Mgokr87iTWuKCpanRknTsJGLSjH8PfjRyBMZpdGdMZJQi0W4CWBq6z54kVxPTuAM05ik6-ztn1BnTa_GBswWpz4dm3rNlF-hOuuHtPV_sf3Jh307Oln4eLFFq-KBJty6VIr1-aKDtmP2jgNqQTGFo0n5neNFrgkb9y8aPcHY8RT37WLeSFodTWdynV3mXlJnlK8tZrOIhqffg-9C24pXrWjdW8CGAZNl8byMMy9yStsDyk54py-53eGewz-NYrfBT14oHeRTXfIQtvgUNW75zya5SBRgIVVk2YgfzRoQLYj094j1FmsyNCxDV1W6jaerP8gcjHeI6qbZOiDgHkDyfWGwXTyD5WMMK2SQpH54p7yBhz2jUDP4eT9HLb2msasSCe5OMThqRZMx8t0P8HE5V7XhhhPVjPSLaf0ZDqqUoAcP8GgKURpiYDAJsylceyDl7CdMk2gywqmAklbeE-ngwuoNK-pVuFRtLMfAlNBt_dN9vGFMQpRrpWHHicZi8QB0zmUqZBFoa5EqhmmrnSrHA_MJiqiUX_Od9hzrZzHfl-rjvcMgtMFBUUGzsv8j7pIzbu2Qu-3DMgBGp9p9bZqf4xD1Jv9PCXa0kU6QARml7tfARyNLVBxw56UZCUHZLgdgFV
-
+@API_HostAddress = http://localhost:5298
+@API_Token = Bearer CfDJ8HxAzmAEXAdMjR2nAB2Xwb4Yf9Ldqx6K1F4m_t6ZgrvALcxFWdB4kepxOJjaqg5_ExuU0WgJfMKnmRjhCyG37rUqf5G__EcTBgJZ8izeadSbfsnU6pQhlQ3cvEHWnO9A7T83v7OEJb2rAlbJwJ6MXu-4DLVsQt4dVsHTHtuEzNX2UeHoY16ahEh9U-TMD-60boGPWy4LBI_C46oh2RHw9_shud2cCfcsF18K42HTD3xi0y3sOhLpncMH6HY-0esJuS0r7ai0rBWkgvsnOJDQuW2ea8XRgCtqk2bS9mLaLkpdAdJ9wB7w7w446D4GuPNU99Vt1YCOQDm508Z74KMDSi1hPx6gnjQfI8GX8axtqbnAfBxyUlmHHHkc8HwXmeVRM9x2y0JCbb3hvLZ_Y7bQ_LUV9lJZDOWqh2cYQTvmzdESzsj6lWGscDfemUCPv1mjKkWC4WNVR7ieSPGY1Gy5JNLECQ637smXzFXM1BjjDlogEGNFkQqvn4VLHBuwQ-ttb9gxpTHKwfCkQm-LaPk2y4ExgY6I6RYQPdsAyKUxx_Kg5SrCV00eFkYH4c2cJTcLHMBliJz__bA-hYLK3X8ep1wYafLKQgkP3tBqxLyOVfQhdWB6BGCKWmlc91MWuXbkpbjgoIurofUcmPkY3w68ZyktmIv_aCatBMT_BZ2un1nJevV_QpkCx7E68Eu-jDQk1vWBR_5VoP8DmA29GfRnVPLpCfkm_sz6ZziiPPlrdOanJdpw1jjxRjw8Sp_YYgkelEMB9vrqydne3xRaMbqel_HmJQyR90FgWh0sitSRH2NP
+@RestaurantId = 996
 ###
 POST {{API_HostAddress}}/api/identity/register
 Content-Type: application/json
@@ -92,7 +92,7 @@ Authorization: {{API_Token}}
 
 
 ###
-GET {{API_HostAddress}}/api/restaurants/1003
+GET {{API_HostAddress}}/api/restaurants/{{RestaurantId}}
 Accept: application/json
 Authorization: {{API_Token}}
 
@@ -148,3 +148,14 @@ Authorization: {{API_Token}}
 
 ###
 
+POST  {{API_HostAddress}}/api/restaurants/{{RestaurantId}}/logo
+Content-Type: multipart/form-data;boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: {{API_Token}}
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="jpef.jpg"
+Content-Type: image/jpeg
+
+
+< /Users/loganathansellappa/Documents/jpef.jpg
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

@@ -2,6 +2,8 @@ using AutoMapper;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
 using Restaurants.Domain.Entities;
+using Restaurants.Application.Restaurants.Dtos.Resolvers;
+
 
 namespace Restaurants.Application.Restaurants.Dtos;
 
@@ -18,6 +20,7 @@ public class RestaurantsProfile : Profile
                     PostalCode = src.PostalCode
                 }));
         CreateMap<Restaurant, RestaurantDto>()
+            .ForMember(dest => dest.LogoUrl, opt => opt.MapFrom<BlobUriResolver>())
             .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.City))
             .ForMember(dest => dest.Street, opt => opt.MapFrom(src => src.Address == null ? null : src.Address.Street))
             .ForMember(dest => dest.PostalCode,

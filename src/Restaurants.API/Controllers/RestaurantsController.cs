@@ -73,7 +73,7 @@ public class RestaurantsController(IMediator mediator) : ControllerBase
     }
     
     [HttpPost]
-    [Route("{restaurantId}/logo")]
+    [Route("{id}/logo")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> UploadLogo([FromRoute]int id, IFormFile file)
