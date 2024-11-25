@@ -12,11 +12,16 @@ services:
       - ASPNETCORE_URLS=http://+:5298
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__RestaurantsDb=Server=db;Database=Restaurants;User Id=sa;Password=dockerStrongPwd123;TrustServerCertificate=true;Encrypt=false;
-      - BLOB_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=restaurants;AccountKey=7YlW9i7Qs0uQhZd6kKjgNw7MwJl6QJ7qYVx3kMl8d5R2xw9aM6HvFZg==;EndpointSuffix=core.windows.net
+      - BlobStorage__ConnectionString=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;QueueEndpoint=http://azurite:10001/devstoreaccount1;TableEndpoint=http://azurite:10002/devstoreaccount1;
+      - BlobStorage__ContainerName=logos
+      - BlobStorage__AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==
     volumes:
       - ./logs:/app/logs
+    networks:
+      - azure-network
     depends_on:
       - db
+      - azurite
   db:
     container_name: restaurants-api-db
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -35,3 +40,38 @@ services:
         /opt/mssql-tools18/bin/sqlcmd -S db -U sa -P dockerStrongPwd123 -i /var/opt/mssql/scripts/db-init.sql  -C &&
         wait  # Prevent the container from exiting
       "
+    networks:
+      - azure-network
+  azurite:
+    container_name: restaurants-api-azurite
+    image: mcr.microsoft.com/azure-storage/azurite
+    ports:
+      - "10000:10000"  # Blob service
+      - "10001:10001"  # Queue service
+      - "10002:10002"  # Table service
+    command: 'azurite --loose --blobHost 0.0.0.0 --blobPort 10000 --queueHost 0.0.0.0 --queuePort 10001 --location /data --debug /data/debug.log'
+    networks:
+      - azure-network
+    volumes:
+      - ./azurite:/data  # Persist Azurite data
+
+  azurite-init:
+    image: mcr.microsoft.com/azure-cli
+    depends_on:
+      - azurite
+    networks:
+      - azure-network
+    volumes:
+      - ./azurite:/data
+    environment:
+      - AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1;
+    entrypoint: >
+      /bin/sh -c "
+      sleep 5 &&
+      az storage container create --name logos --connection-string DefaultEndpointsProtocol=http;AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;BlobEndpoint=http://azurite:10000/devstoreaccount1; &&
+      echo 'Default container created successfully!'
+      "
+networks:
+  azure-network:
+    name: azure-network-config
+    
