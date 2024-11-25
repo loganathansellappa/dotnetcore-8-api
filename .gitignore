@@ -29,4 +29,5 @@ src/Restaurants.Infrastructure/bin
 tests/**/bin/
 tests/**/obj/
 src/**/bin/
+src/Restaurants.Application/bin/
 src/**/obj/
